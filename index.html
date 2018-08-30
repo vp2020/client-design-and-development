@@ -1,21 +1,73 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>JavaScript</title>
-        <script>
-            // developed of 1995
-            // brandon eich at netscape
-            //
-            // ECMAScript is the official name
-            // JavaScript is the Sun/Oracle Trademark
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <script>
+      // developed of 1995
+      // brandon eich at netscape
+      //
+      // ECMAScript is the official name
+      // JavaScript is the Sun/Oracle Trademark
 
-            // ES3 1990
-            // ES5 2009 - well adopted by all browsers
-            // ES6 2015 (aka ES2015) - partial support by most browser
-        </script>
-    </head>
-    <body>
+      // ES3 1990
+      // ES5 2009 - well adopted by all browsers
+      // ES6 2015 (aka ES2015) - partial support by most browser
+      //
+      // runs in browser, and Node, everywhere
+      // cross platform
 
-    </body>
+      // var likeSchool = prompt("Do you like school?");
+      // alert("You said " + likeSchool);
+      // confirm("Are you sure?");
+    </script>
+  </head>
+  <body>
+    <div id="response-div">
+      <script>
+        // document.getElementById('response-div').innerHTML = likeSchool;
+
+        let isFirefox = window.navigator.userAgent.indexOf('Firefox') > -1;
+        let isChrome = window.navigator.userAgent.indexOf('Chrome') > -1;
+
+        function printStuff() {
+          console.log("isChrome ", isChrome, window.navigator);
+          console.info("This is console.info log");
+          console.warn("This is console.warn log");
+          console.error("This is console.error log");
+        }
+        printStuff();
+        if (isChrome) {
+          document.write("You are using Chrome. Good Job!");
+        } else if (isFirefox) {
+          document.write("You are using Firefox. Great!");
+        } else {
+          document.write("Get yourself a real browser");
+        }
+
+        const PI = 3.14;
+        var  person = {       // object literal syntax
+            firstName: 'Viral',
+            lastName: 'Parmar',
+            courses: [
+              {
+                name: "CDD",
+                prof: "DG"
+              },
+              {
+                name: "crypto",
+                prof: "SL"
+              }
+            ],  // array literal syntax (ordered collection)
+            fall: true
+          };
+
+          let propImInterestedIn = "prof";
+          console.log(person.courses[0].prof, "teach CDD");
+          console.log(person.courses[0][propImInterestedIn], "teach CDD");
+          person.job = 'student';
+          console.log(person);
+      </script>
+    </div>
+  </body>
 </html>
